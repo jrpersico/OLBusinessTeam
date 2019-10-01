@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap');
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: -24px;
+    display: block;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    right: 0;
+}
+.slick-dots li button:before {
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: '\2022';
+    text-align: center;
+    opacity: .25;
+    color: #c99148 !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: #c99148 !important;
+}
+.slick-dotted.slick-slider {
+    margin-bottom: 0;
+}
