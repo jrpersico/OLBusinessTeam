@@ -16,25 +16,104 @@ body {
     right: 0;
 }
 .slick-dots li button:before {
-    font-family: 'slick';
-    font-size: 6px;
-    line-height: 20px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    content: '\2022';
-    text-align: center;
-    opacity: .25;
-    color: #c99148 !important;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    color: #f2b64e !important;
 }
 .slick-dots li.slick-active button:before {
-    opacity: .75;
-    color: #c99148 !important;
+    color: #f2b64e !important;
 }
 .slick-dotted.slick-slider {
     margin-bottom: 0;
+}
+
+.content-page {
+  background-color: #f2f5f6;
+  margin-top: -4.7rem;
+  z-index: -1;
+  padding-top: 5rem;
+  border-radius: 2rem 2rem 0rem 0rem;
+  .card-content-page {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    color: #19356c;
+    h5 {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: larger;
+      .business {
+        font-weight: 400;
+      }
+    }
+    p {
+      font-size: medium;
+      svg {
+        color: #f2b64e;
+      }
+    }
+    .members {
+      h5 {
+        font-size: medium;
+      }
+      .img-members {
+        width: 100%;
+        height: 110px;
+        padding: 0.5rem;
+      }
+      .btn {
+        float: right;
+      }
+    }
+    .btn {
+      background-color: #f2b64e;
+      border-color: #f2b64e;
+      font-size: small;
+      text-transform: uppercase;
+    }
+  }
+  .members-card {
+    background-color: #244e96;
+    background-image: url('../community.svg');
+    background-repeat: no-repeat;
+    background-size: 60%;
+    color: #fff;
+    background-position: bottom right;
+    h5 {
+      font-weight: 100;
+    }
+    h3 {
+      font-size: -webkit-xxx-large;
+    }
+  }
+  .card-advantages {
+    .advantages {
+      .advantage {
+        .col {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+      .progress {
+        height: 0.25rem;
+        .progress-bar {
+          background-color: #3069ca;
+        }
+      }
+    }
+    hr {
+      margin-top: 0.86rem;
+      margin-bottom: 0.86rem;
+    }
+  }
+  .events-list {
+    color: #19356c;
+    h5 {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: larger;
+    }
+    p {
+      font-size: medium;
+    }
+  }
 }

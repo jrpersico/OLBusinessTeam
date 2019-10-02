@@ -2,13 +2,13 @@
   <b-row class="menu mt-4" align-v="center">
     <b-col cols="12">
       <slick ref="slick" class="menu" :options="slickOptions">
-        <div class="text-center py-4">
+        <div class="text-center py-5">
           <b-button class="px-5 py-3" to="/">Dashboard</b-button>
         </div>
-        <div class="text-center py-4">
+        <div class="text-center py-5">
           <b-button class="px-5 py-3" to="/annuaire">Annuaire</b-button>
         </div>
-        <div class="text-center py-4">
+        <div class="text-center py-5">
           <b-button class="px-5 py-3" to="/calendrier">Calendrier</b-button>
         </div>
       </slick>
@@ -55,8 +55,8 @@ methods: {
     box-shadow: 0 10px 30px 0 rgba(2, 13, 70, 0.1);
   }
   .btn.router-link-active {
-    background-color: #c99148;
-    border-color: #c99148;
+    background-color: #f2b64e;
+    border-color: #f2b64e;
     color: #fff;
     text-transform: uppercase;
   }

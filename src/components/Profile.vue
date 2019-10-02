@@ -15,23 +15,31 @@
     <b-col cols="12" sm="12" md="6" class="ml-auto">
       <slick ref="slick" class="complete-status" :options="slickOptions">
         <div>
-          <div class="complete">
-            <b-container>
-              <b-row align-v="center">
-                <b-col cols="4">
-                  <apexchart type=radialBar width='100%' :options="chartOptions" :series="series" />
-                </b-col>
-                <b-col cols="8" class="pr-4 pt-3 pb-3">
-                  <h5 class="mb-1">Profil</h5>
-                  <p class="mb-1">Bénéficiez de tous vos avantages en complétant votre profil.</p>
-                  <b-button class="px-4" pill>Compléter</b-button>
-                </b-col>
-              </b-row>
-            </b-container>
-          </div>
+            <ul class="complete p-2">
+              <li class="progression m-3">
+                <vue-circle
+                  :progress="70"
+                  :size="100"
+                  :reverse="false"
+                  line-cap="round"
+                  :fill=fill
+                  empty-fill="#fff"
+                  :animation-start-value="0.0"
+                  :start-angle="25"
+                  insert-mode="append"
+                  :thickness="5"
+                  :show-percent="true">
+                </vue-circle>
+              </li>
+              <li class="progression-info">
+                <h5 class="mb-2">Profil à compléter</h5>
+                <p class="mb-2">Bénéficiez de tous vos avantages<br>en complétant votre profil</p>
+                <b-button class="px-4" pill>Compléter</b-button>
+              </li>
+            </ul>
         </div>
         <div>
-          <ul class="advantages pt-3">
+          <ul class="advantages pt-4">
             <li>
               <font-awesome-icon :icon="['far', 'ticket-alt']" class=""/>
               <h5 class="mb-0">Tarifs exclusifs</h5>
@@ -58,16 +66,19 @@
 import Slick from 'vue-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import VueCircle from 'vue2-circle-progress/src/index.vue'
 
 export default {
   name: 'Profile',
   components: {
-    Slick
+    Slick,
+    VueCircle
   },
   data() {
     return {
       value: 33.333333333,
       max: 50,
+      fill: { color: "#f2b64e" },
       slickOptions: {
         slidesToShow: 1,
         infinite: true,
@@ -77,44 +88,11 @@ export default {
         dots: true,
         centerMode: true,
         centerPadding: 15
-      },
-
-      series: [70],
-        chartOptions: {
-          plotOptions: {
-            radialBar: {
-              hollow: {
-                size: '70%',
-              },
-              track: {
-                background: "#fff",
-                margin: 3
-              },
-              dataLabels: {
-                style: {
-                  colors: '#19356c'
-                },
-                name: {
-                  show: false
-                },
-                value: {
-                  offsetY: 4,
-                  fontSize: '18px',
-                  fontFamily: 'Roboto Condensed',
-                  fonWeight: 'bold',
-                  color: '#c99148'
-                }
-              }
-            },
-          },
-          labels: ['Cricket'],
-          colors:['#c99148']
-        }
-
-
+      }
     }
   },
   methods: {
+
   }
 }
 </script>
@@ -132,26 +110,47 @@ export default {
     color: #19356c;
     h3 {
       font-weight: bold;
+      font-size: xx-large;
+    }
+    p {
+      font-size: large;
     }
     svg {
-      color: #c99148;
+      color: #f2b64e;
     }
   }
 }
 .complete-status {
-
+  max-width: 450px;
+  float: right;
 }
 .complete {
   background-color: #f9f5f1;
   border-radius: 10rem;
   color: #19356c;
-  h5 {
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  .btn {
-    background-color: #c99148;
-    border-color: #c99148;
+  padding-left: 0;
+  margin: 0;
+  width: 100%;
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    h5 {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: large;
+    }
+    p {
+      font-size: medium;
+    }
+    .btn {
+      background-color: #f2b64e;
+      border-color: #f2b64e;
+      font-size: small;
+      text-transform: uppercase;
+    }
+    .percent-text {
+      font-size: x-large !important;
+    }
   }
 }
 .advantages {
@@ -166,9 +165,13 @@ export default {
     h5 {
       text-transform: uppercase;
       font-weight: bold;
+      font-size: large;
+    }
+    p {
+      font-size: small;
     }
     svg {
-      color: #c99148;
+      color: #f2b64e;
       font-size: 3rem;
       border: solid 3px;
       border-radius: 4rem;
