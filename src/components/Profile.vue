@@ -7,8 +7,8 @@
         </b-col>
         <b-col cols="8" class="hello-info">
           <h3 class="mb-4">Bonjour Hugo 👋</h3>
-          <p class="mb-2"><font-awesome-icon :icon="['far', 'mail-bulk']" class="mr-3"/> harias@ol.fr</p>
-          <p class="mb-2"><font-awesome-icon :icon="['far', 'mobile']" class="mr-3"/> +33 6 88 77 89 77</p>
+          <p class="mb-2"><font-awesome-icon :icon="['fad', 'mail-bulk']" class="mr-3"/> harias@ol.fr</p>
+          <p class="mb-2"><font-awesome-icon :icon="['fad', 'mobile']" class="mr-3"/> +33 6 88 77 89 77</p>
         </b-col>
       </b-row>
     </b-col>
@@ -41,17 +41,17 @@
         <div>
           <ul class="advantages pt-4">
             <li>
-              <font-awesome-icon :icon="['far', 'ticket-alt']" class=""/>
+              <font-awesome-icon :icon="['fad', 'ticket-alt']" class=""/>
               <h5 class="mb-0">Tarifs exclusifs</h5>
               <p>places supplémentaires</p>
             </li>
             <li>
-              <font-awesome-icon :icon="['far', 'stars']" class=""/>
+              <font-awesome-icon :icon="['fad', 'stars']" class=""/>
               <h5 class="mb-0">Remises</h5>
               <p>sur les expériences OL</p>
             </li>
             <li>
-              <font-awesome-icon :icon="['far', 'badge-percent']" class=""/>
+              <font-awesome-icon :icon="['fad', 'badge-percent']" class=""/>
               <h5 class="mb-0">10% de remises</h5>
               <p>en boutique OL et adidas</p>
             </li>
@@ -82,12 +82,14 @@ export default {
       slickOptions: {
         slidesToShow: 1,
         infinite: true,
-        autoplay: false,
+        autoplay: true,
+        autoplaySpeed: 8000,
         slidesToScroll: 1,
         arrows: false,
         dots: true,
         centerMode: true,
-        centerPadding: 15
+        centerPadding: 15,
+        speed: 1500,
       }
     }
   },
@@ -98,6 +100,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$break-small: 320px;
+$break-large: 1200px;
+
 .profil {
   .profile-pic {
     box-shadow: 0 10px 30px 0 rgba(2,13,70,.1);
@@ -123,6 +128,12 @@ export default {
 .complete-status {
   max-width: 450px;
   float: right;
+}
+@media screen and (max-width: $break-small) {
+  .complete-status {
+    max-width: 100%;
+    float: right;
+  }
 }
 .complete {
   background-color: #f9f5f1;

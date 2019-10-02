@@ -10,6 +10,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/pro-duotone-svg-icons": "^5.11.2",
     "@fortawesome/pro-light-svg-icons": "^5.11.2",
     "@fortawesome/pro-regular-svg-icons": "^5.11.2",
     "@fortawesome/vue-fontawesome": "^0.1.7",
@@ -22,6 +23,7 @@
     "vue": "^2.6.10",
     "vue-apexcharts": "^1.5.0",
     "vue-countup-v2": "^4.0.0",
+    "vue-moment": "^4.0.0",
     "vue-router": "^3.0.3",
     "vue-slick": "^1.1.15",
     "vue2-circle-progress": "^1.2.3",

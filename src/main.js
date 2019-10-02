@@ -12,22 +12,25 @@ Vue.use(VueApexCharts)
 
 Vue.component('apexchart', VueApexCharts)
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faBell } from '@fortawesome/pro-regular-svg-icons'
-import { faCircle } from '@fortawesome/free-solid-svg-icons'
-import { faCalendarAlt } from '@fortawesome/pro-light-svg-icons'
-import { faMailBulk } from '@fortawesome/pro-regular-svg-icons'
-import { faMobile } from '@fortawesome/pro-regular-svg-icons'
-import { faTicketAlt } from '@fortawesome/pro-regular-svg-icons'
-import { faStars } from '@fortawesome/pro-regular-svg-icons'
-import { faBadgePercent } from '@fortawesome/pro-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faBell } from '@fortawesome/pro-duotone-svg-icons'
+import { faCalendarAlt } from '@fortawesome/pro-duotone-svg-icons'
+import { faMailBulk } from '@fortawesome/pro-duotone-svg-icons'
+import { faMobile } from '@fortawesome/pro-duotone-svg-icons'
+import { faTicketAlt } from '@fortawesome/pro-duotone-svg-icons'
+import { faStars } from '@fortawesome/pro-duotone-svg-icons'
+import { faBadgePercent } from '@fortawesome/pro-duotone-svg-icons'
+import { faArrowAltCircleRight } from '@fortawesome/pro-duotone-svg-icons'
+import { faCircle } from '@fortawesome/pro-duotone-svg-icons'
 
-library.add(faBell,faCircle,faCalendarAlt,faMailBulk,faMobile,faTicketAlt,faStars,faBadgePercent)
+library.add(faBell,faCalendarAlt,faMailBulk,faMobile,faTicketAlt,faStars,faBadgePercent,faArrowAltCircleRight,faCircle)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.use(BootstrapVue)
+
+Vue.use(require('vue-moment'))
 
 Vue.config.productionTip = false
 

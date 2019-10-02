@@ -2,7 +2,7 @@
   <b-navbar type="light" class="mb-4">
     <b-navbar-brand href="#">
        <img src="../assets/olbt.png" height="45px" alt="OLBT" class="ml-3 mr-3">
-       Espace <span class="gold">Abonné</span>
+       <span>Espace <span class="gold">Abonné</span></span>
     </b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -13,8 +13,8 @@
       <b-navbar-nav class="ml-auto">
 
         <b-navbar-nav>
-          <b-nav-item href="#" class="ml-3 pt-2"><font-awesome-icon :icon="['far', 'bell']"/></b-nav-item>
-          <b-nav-item href="#" class="ml-3 pt-2"><font-awesome-icon :icon="['fal', 'calendar-alt']"/></b-nav-item>
+          <b-nav-item href="#" class="ml-3 pt-2"><font-awesome-icon :icon="['fad', 'bell']"/></b-nav-item>
+          <b-nav-item href="#" class="ml-3 pt-2"><font-awesome-icon :icon="['fad', 'calendar-alt']"/></b-nav-item>
         </b-navbar-nav>
 
         <b-nav-item-dropdown right no-caret>
@@ -36,6 +36,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.navbar-collapse svg {
+  color: #19356c !important;
+}
   .navbar-brand {
     text-transform: uppercase;
     font-weight: 400;

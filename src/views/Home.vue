@@ -19,8 +19,8 @@
                   </b-col>
                   <b-col cols="9">
                     <h5 class="mb-3">{{member.referer_firstname}} {{member.referer_lastname}} <span class="business">({{member.name}})</span></h5>
-                    <p class="mb-2"><font-awesome-icon :icon="['far', 'mail-bulk']" class="mr-3"/> {{member.mail}}</p>
-                    <p class="mb-0"><font-awesome-icon :icon="['far', 'mobile']" class="mr-3"/> {{member.phone}}</p>
+                    <p class="mb-2"><font-awesome-icon :icon="['fad', 'mail-bulk']" class="mr-3"/> {{member.mail}}</p>
+                    <p class="mb-0"><font-awesome-icon :icon="['fad', 'mobile']" class="mr-3"/> {{member.phone}}</p>
                     <b-button class="px-4" pill>Contacter</b-button>
                   </b-col>
                 </b-row>
@@ -33,7 +33,7 @@
               <b-col cols="6">
                 <div class="card-content-page members-card">
                   <h5 class="mb-1">Entreprises</h5>
-                  <h3 class="mb-3"><ICountUp :delay="delay" :endVal="endVal" :options="options" @ready="onReady"/></h3>
+                  <h3 class="mb-3"><ICountUp :delay="delay" :endVal="endVal" :options="options"/></h3>
                   <p class="mb-0">400 - Blue</p>
                   <p class="mb-0">720 - Silver</p>
                   <p class="mb-4">350 - Gold</p>
@@ -63,10 +63,17 @@
                   <h5 class="mb-2">Evènements</h5>
                   <p class="mb-4">Vos prochaines rencontres</p>
                   <div class="events" v-for="(single_event, index) in events" :key="index">
+                    <b-row align-v="center" class="event-title">
+                      <b-col cols="12">
+                        <p class="mb-1">{{single_event.name}} <font-awesome-icon :icon="['fad', 'arrow-alt-circle-right']"/></p>
+                      </b-col>
+                    </b-row>
                     <b-row align-v="center" class="event">
-                      <b-col cols="12" class="col">
-                        <p class="mb-1">{{single_event.name}}</p>
-                        <p class="mb-0">{{single_event.description}}</p>
+                      <b-col cols="6">
+                        <p class="mb-0">Statut : <font-awesome-icon v-b-tooltip.hover.bottom="'OLBT BLue'" :icon="['fad', 'circle']" v-if="single_event.blue" class="mr-1 blue"/><font-awesome-icon v-b-tooltip.hover.bottom="'OLBT Silver'" v-if="single_event.silver" :icon="['fad', 'circle']" class="mr-1 silver"/><font-awesome-icon v-b-tooltip.hover.bottom="'OLBT Gold'" :icon="['fad', 'circle']" v-if="single_event.gold" class="mr-1 gold"/></p>
+                      </b-col>
+                      <b-col cols="6" class="text-right">
+                        <p class="mb-0">{{ new Date() | moment("DD/MM/YY") }}</p>
                       </b-col>
                     </b-row>
                     <hr v-if="(index+1) != events.length">
@@ -108,12 +115,12 @@ export default {
         { name:'Parking', value:100, complete:'1/1' }
       ],
       events : [
-        { name:'Dijon FCO', description:'test description', date:'12/12/12' },
-        { name:'Dijon FCO', description:'test description', date:'12/12/12' },
-        { name:'Dijon FCO', description:'test description', date:'12/12/12' },
-        { name:'Dijon FCO', description:'test description', date:'12/12/12' },
-        { name:'Dijon FCO', description:'test description', date:'12/12/12' },
-        { name:'Dijon FCO', description:'test description', date:'12/12/12' }
+        { name:'Déjeuner partenaires OLBT', blue:false, silver:false, gold:true, date:'12/12/12' },
+        { name:'Retransmission Match', blue:false, silver:true, gold:true, description:'test description', date:'12/12/12' },
+        { name:'Match - Dijon FCO', blue:true, silver:true, gold:true, description:'test description', date:'12/12/12' },
+        { name:'Retransmission Match', blue:false, silver:true, gold:true, description:'test description', date:'12/12/12' },
+        { name:'Match - Metz', blue:true, silver:true, gold:true, description:'test description', date:'12/12/12' },
+        { name:'Conférence OLBT', blue:false, silver:true, gold:true, description:'test description', date:'12/12/12' }
       ],
       delay: 1000,
       endVal: 1500,
@@ -128,10 +135,7 @@ export default {
     }
   },
   methods: {
-    onReady: function(instance, CountUp) {
-      const that = this;
-      instance.update(that.endVal);
-    }
+
   }
 }
 </script>

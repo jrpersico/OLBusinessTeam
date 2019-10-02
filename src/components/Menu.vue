@@ -11,6 +11,9 @@
         <div class="text-center py-5">
           <b-button class="px-5 py-3" to="/calendrier">Calendrier</b-button>
         </div>
+        <div class="text-center py-5">
+          <b-button class="px-5 py-3" to="/compte">Mon Compte</b-button>
+        </div>
       </slick>
     </b-col>
   </b-row>
@@ -29,7 +32,7 @@ components: {
 data() {
   return {
     slickOptions: {
-      slidesToShow: 3,
+      slidesToShow: 4,
       infinite: true,
       autoplay: false,
       slidesToScroll: 1,
