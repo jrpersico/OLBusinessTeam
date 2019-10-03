@@ -100,13 +100,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$break-small: 320px;
-$break-large: 1200px;
-
 .profil {
   .profile-pic-container {
     text-align: right;
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 576px) {
         text-align: center;
     }
     .profile-pic {
@@ -115,7 +112,7 @@ $break-large: 1200px;
       max-width: 100%;
       height: auto;
       max-height: 150px;
-      @media screen and (max-width: 480px) {
+      @media screen and (max-width: 576px) {
           margin-bottom: 1rem;
       }
     }
@@ -123,7 +120,7 @@ $break-large: 1200px;
   .hello-info {
     color: #19356c;
     text-align: left;
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 576px) {
         text-align: center;
         margin-bottom: 2rem;
     }
@@ -142,14 +139,14 @@ $break-large: 1200px;
 .complete-status {
   max-width: 450px;
   float: right;
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 576px) {
       max-width: 100%;
       float: right;
   }
   .complete {
     background-color: #f9f5f1;
     border-radius: 10rem;
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 576px) {
       border-radius: 1rem;
     }
     color: #19356c;
@@ -178,7 +175,7 @@ $break-large: 1200px;
       }
     }
     li.progression-info {
-      @media screen and (max-width: 480px) {
+      @media screen and (max-width: 576px) {
         padding: 0.8rem 3.5rem;
         width: 100%;
       }
@@ -188,7 +185,7 @@ $break-large: 1200px;
     padding-left: 0;
     margin: 0;
     width: 100%;
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 576px) {
       padding-top: 1rem !important;
     }
     li {
@@ -201,7 +198,7 @@ $break-large: 1200px;
         text-transform: uppercase;
         font-weight: bold;
         font-size: large;
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width: 576px) {
           font-size: smaller;
         }
       }
@@ -217,7 +214,7 @@ $break-large: 1200px;
         height: 4rem;
         width: 4rem;
         margin-bottom: 1rem;
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width: 576px) {
           font-size: smaller;
           padding: 12%;
         }

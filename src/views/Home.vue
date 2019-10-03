@@ -69,7 +69,7 @@
                       </b-col>
                     </b-row>
                     <b-row align-v="center" class="event">
-                      <b-col cols="6">
+                      <b-col cols="7">
                         <p class="mb-0">
                           Statut :
                           <span v-b-tooltip.hover.bottom="{ customClass: 'blue' }" title="OLBT Blue" class="mr-1 blue"><font-awesome-icon :icon="['fad', 'circle']" v-if="single_event.blue"/></span>
@@ -77,7 +77,7 @@
                           <span v-b-tooltip.hover.bottom="{ customClass: 'gold' }" title="OLBT Gold" class="mr-1 gold"><font-awesome-icon :icon="['fad', 'circle']" v-if="single_event.gold"/></span>
                         </p>
                       </b-col>
-                      <b-col cols="6" class="text-right">
+                      <b-col cols="5" class="text-right">
                         <p class="mb-0">{{ new Date() | moment("DD/MM/YY") }}</p>
                       </b-col>
                     </b-row>

@@ -23,11 +23,12 @@ import { faStars } from '@fortawesome/pro-duotone-svg-icons'
 import { faBadgePercent } from '@fortawesome/pro-duotone-svg-icons'
 import { faArrowAltCircleRight } from '@fortawesome/pro-duotone-svg-icons'
 import { faCircle } from '@fortawesome/pro-duotone-svg-icons'
+import { faUserCircle } from '@fortawesome/pro-duotone-svg-icons'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons'
 import { faTwitterSquare } from '@fortawesome/free-brands-svg-icons'
 
-library.add(faBell,faCalendarAlt,faMailBulk,faMobile,faTicketAlt,faStars,faBadgePercent,faArrowAltCircleRight,faCircle,faLinkedin,faFacebookSquare,faTwitterSquare)
+library.add(faBell,faCalendarAlt,faMailBulk,faMobile,faTicketAlt,faStars,faBadgePercent,faArrowAltCircleRight,faCircle,faLinkedin,faFacebookSquare,faTwitterSquare,faUserCircle)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

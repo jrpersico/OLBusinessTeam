@@ -49,7 +49,7 @@ data() {
           }
         },
         {
-          breakpoint: 480,
+          breakpoint: 576,
           settings: {
             slidesToShow: 1,
             variableWidth: true,
@@ -67,7 +67,7 @@ methods: {
 
 <style lang="scss" scoped>
 .menu-container {
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 576px) {
     padding: 0;
   }
   .menu {
@@ -85,7 +85,7 @@ methods: {
       text-transform: uppercase;
     }
     .menu-item {
-      @media screen and (max-width: 480px) {
+      @media screen and (max-width: 576px) {
         padding: 2rem 1rem !important;
       }
     }
