@@ -1,17 +1,17 @@
 <template>
-  <b-row class="menu mt-4" align-v="center">
-    <b-col cols="12">
+  <b-row class="mt-4" align-v="center">
+    <b-col cols="12" class="menu-container">
       <slick ref="slick" class="menu" :options="slickOptions">
-        <div class="text-center py-5">
+        <div class="menu-item text-center py-5">
           <b-button class="px-5 py-3" to="/">Dashboard</b-button>
         </div>
-        <div class="text-center py-5">
+        <div class="menu-item text-center py-5">
           <b-button class="px-5 py-3" to="/annuaire">Annuaire</b-button>
         </div>
-        <div class="text-center py-5">
+        <div class="menu-item text-center py-5">
           <b-button class="px-5 py-3" to="/calendrier">Calendrier</b-button>
         </div>
-        <div class="text-center py-5">
+        <div class="menu-item text-center py-5">
           <b-button class="px-5 py-3" to="/compte">Mon Compte</b-button>
         </div>
       </slick>
@@ -33,13 +33,30 @@ data() {
   return {
     slickOptions: {
       slidesToShow: 4,
-      infinite: true,
+      infinite: false,
       autoplay: false,
       slidesToScroll: 1,
       arrows: false,
-      dots: true,
+      dots: false,
       centerMode: true,
-      centerPadding: 15
+      centerPadding: 15,
+      responsive: [
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            variableWidth: true,
+            centerMode: true
+          }
+        }
+      ]
     }
   }
 },
@@ -49,19 +66,29 @@ methods: {
 </script>
 
 <style lang="scss" scoped>
-.menu {
-  .btn {
-    background-color: #fff;
-    border-color: #fff;
-    color: #19356c;
-    text-transform: uppercase;
-    box-shadow: 0 10px 30px 0 rgba(2, 13, 70, 0.1);
+.menu-container {
+  @media screen and (max-width: 480px) {
+    padding: 0;
   }
-  .btn.router-link-active {
-    background-color: #f2b64e;
-    border-color: #f2b64e;
-    color: #fff;
-    text-transform: uppercase;
+  .menu {
+    .btn {
+      background-color: #fff;
+      border-color: #fff;
+      color: #19356c;
+      text-transform: uppercase;
+      box-shadow: 0 10px 30px 0 rgba(2, 13, 70, 0.1);
+    }
+    .btn.router-link-active {
+      background-color: #f2b64e;
+      border-color: #f2b64e;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    .menu-item {
+      @media screen and (max-width: 480px) {
+        padding: 2rem 1rem !important;
+      }
+    }
   }
 }
 </style>

@@ -2,10 +2,10 @@
   <b-row class="profil" align-v="center">
     <b-col cols="12" sm="12" md="6">
       <b-row align-v="center">
-        <b-col cols="4">
-          <b-img right class="profile-pic" src="https://media.licdn.com/dms/image/C4D03AQEk423IZXAf1w/profile-displayphoto-shrink_200_200/0?e=1575504000&v=beta&t=rdzfYl6aWTMTcbuJzl-uvy7uc7TeIcn8GsBqUSHAC-k" alt="Profile Pic"></b-img>
+        <b-col cols="12" sm="4" class="profile-pic-container">
+          <b-img class="profile-pic" src="https://media.licdn.com/dms/image/C4D03AQEk423IZXAf1w/profile-displayphoto-shrink_200_200/0?e=1575504000&v=beta&t=rdzfYl6aWTMTcbuJzl-uvy7uc7TeIcn8GsBqUSHAC-k" alt="Profile Pic"></b-img>
         </b-col>
-        <b-col cols="8" class="hello-info">
+        <b-col cols="12" sm="8" class="hello-info">
           <h3 class="mb-4">Bonjour Hugo 👋</h3>
           <p class="mb-2"><font-awesome-icon :icon="['fad', 'mail-bulk']" class="mr-3"/> harias@ol.fr</p>
           <p class="mb-2"><font-awesome-icon :icon="['fad', 'mobile']" class="mr-3"/> +33 6 88 77 89 77</p>
@@ -16,7 +16,7 @@
       <slick ref="slick" class="complete-status" :options="slickOptions">
         <div>
             <ul class="complete p-2">
-              <li class="progression m-3">
+              <li class="progression m-3 d-none d-sm-inline-block">
                 <vue-circle
                   :progress="70"
                   :size="100"
@@ -104,15 +104,29 @@ $break-small: 320px;
 $break-large: 1200px;
 
 .profil {
-  .profile-pic {
-    box-shadow: 0 10px 30px 0 rgba(2,13,70,.1);
-    border-radius: 1rem !important;
-    max-width: 100%;
-    height: auto;
-    max-height: 150px;
+  .profile-pic-container {
+    text-align: right;
+    @media screen and (max-width: 480px) {
+        text-align: center;
+    }
+    .profile-pic {
+      box-shadow: 0 10px 30px 0 rgba(2,13,70,.1);
+      border-radius: 1rem !important;
+      max-width: 100%;
+      height: auto;
+      max-height: 150px;
+      @media screen and (max-width: 480px) {
+          margin-bottom: 1rem;
+      }
+    }
   }
   .hello-info {
     color: #19356c;
+    text-align: left;
+    @media screen and (max-width: 480px) {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
     h3 {
       font-weight: bold;
       font-size: xx-large;
@@ -128,68 +142,86 @@ $break-large: 1200px;
 .complete-status {
   max-width: 450px;
   float: right;
-}
-@media screen and (max-width: $break-small) {
-  .complete-status {
-    max-width: 100%;
-    float: right;
+  @media screen and (max-width: 480px) {
+      max-width: 100%;
+      float: right;
   }
-}
-.complete {
-  background-color: #f9f5f1;
-  border-radius: 10rem;
-  color: #19356c;
-  padding-left: 0;
-  margin: 0;
-  width: 100%;
-  li {
-    display: inline-block;
-    vertical-align: middle;
-    h5 {
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: large;
+  .complete {
+    background-color: #f9f5f1;
+    border-radius: 10rem;
+    @media screen and (max-width: 480px) {
+      border-radius: 1rem;
     }
-    p {
-      font-size: medium;
-    }
-    .btn {
-      background-color: #f2b64e;
-      border-color: #f2b64e;
-      font-size: small;
-      text-transform: uppercase;
-    }
-    .percent-text {
-      font-size: x-large !important;
-    }
-  }
-}
-.advantages {
-  padding-left: 0;
-  margin: 0;
-  width: 100%;
-  li {
-    display: inline-block;
-    width: 33%;
-    text-align: center;
     color: #19356c;
-    h5 {
-      text-transform: uppercase;
-      font-weight: bold;
-      font-size: large;
+    padding-left: 0;
+    margin: 0;
+    width: 100%;
+    li {
+      display: inline-block;
+      vertical-align: middle;
+      h5 {
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: large;
+      }
+      p {
+        font-size: medium;
+      }
+      .btn {
+        background-color: #f2b64e;
+        border-color: #f2b64e;
+        font-size: small;
+        text-transform: uppercase;
+      }
+      .percent-text {
+        font-size: x-large !important;
+      }
     }
-    p {
-      font-size: small;
+    li.progression-info {
+      @media screen and (max-width: 480px) {
+        padding: 0.8rem 3.5rem;
+        width: 100%;
+      }
     }
-    svg {
-      color: #f2b64e;
-      font-size: 3rem;
-      border: solid 3px;
-      border-radius: 4rem;
-      padding: 9%;
-      height: 4rem;
-      width: 4rem;
-      margin-bottom: 1rem;
+  }
+  .advantages {
+    padding-left: 0;
+    margin: 0;
+    width: 100%;
+    @media screen and (max-width: 480px) {
+      padding-top: 1rem !important;
+    }
+    li {
+      display: inline-block;
+      width: 33%;
+      text-align: center;
+      color: #19356c;
+      vertical-align: top;
+      h5 {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: large;
+        @media screen and (max-width: 480px) {
+          font-size: smaller;
+        }
+      }
+      p {
+        font-size: small;
+      }
+      svg {
+        color: #f2b64e;
+        font-size: 3rem;
+        border: solid 3px;
+        border-radius: 4rem;
+        padding: 9%;
+        height: 4rem;
+        width: 4rem;
+        margin-bottom: 1rem;
+        @media screen and (max-width: 480px) {
+          font-size: smaller;
+          padding: 12%;
+        }
+      }
     }
   }
 }

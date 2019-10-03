@@ -2,7 +2,7 @@
   <b-navbar type="light" class="mb-4">
     <b-navbar-brand href="#">
        <img src="../assets/olbt.png" height="45px" alt="OLBT" class="ml-3 mr-3">
-       <span>Espace <span class="gold">Abonné</span></span>
+       <span class="d-none d-sm-inline-block">Espace <span class="gold">Abonné</span></span>
     </b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>

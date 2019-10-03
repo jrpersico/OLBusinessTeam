@@ -8,16 +8,16 @@
     <b-container class="content-page" fluid>
       <b-container>
         <b-row class="dashboard">
-          <b-col cols="6">
+          <b-col cols="12" sm="6">
             <div class="card-content-page">
               <h5 class="mb-2">Nouveaux membres</h5>
               <p class="mb-4">Découvrez les nouveaux membres de la communauté OLBT</p>
               <div class="members" v-for="(member, index) in new_members" :key="index">
                 <b-row align-v="center">
-                  <b-col cols="3">
+                  <b-col cols="12" sm="3">
                     <div class="img-members" :style="{ 'background': 'url(' + member.img + ') no-repeat center','background-size':'contain', 'background-origin': 'content-box' }"></div>
                   </b-col>
-                  <b-col cols="9">
+                  <b-col cols="12" sm="9">
                     <h5 class="mb-3">{{member.referer_firstname}} {{member.referer_lastname}} <span class="business">({{member.name}})</span></h5>
                     <p class="mb-2"><font-awesome-icon :icon="['fad', 'mail-bulk']" class="mr-3"/> {{member.mail}}</p>
                     <p class="mb-0"><font-awesome-icon :icon="['fad', 'mobile']" class="mr-3"/> {{member.phone}}</p>
@@ -28,9 +28,9 @@
               </div>
             </div>
           </b-col>
-          <b-col cols="6">
+          <b-col cols="12" sm="6">
             <b-row>
-              <b-col cols="6">
+              <b-col cols="12" sm="6">
                 <div class="card-content-page members-card">
                   <h5 class="mb-1">Entreprises</h5>
                   <h3 class="mb-3"><ICountUp :delay="delay" :endVal="endVal" :options="options"/></h3>
@@ -58,7 +58,7 @@
                   </div>
                 </div>
               </b-col>
-              <b-col cols="6">
+              <b-col cols="12" sm="6">
                 <div class="events-list">
                   <h5 class="mb-2">Evènements</h5>
                   <p class="mb-4">Vos prochaines rencontres</p>
@@ -70,7 +70,12 @@
                     </b-row>
                     <b-row align-v="center" class="event">
                       <b-col cols="6">
-                        <p class="mb-0">Statut : <font-awesome-icon v-b-tooltip.hover.bottom="'OLBT BLue'" :icon="['fad', 'circle']" v-if="single_event.blue" class="mr-1 blue"/><font-awesome-icon v-b-tooltip.hover.bottom="'OLBT Silver'" v-if="single_event.silver" :icon="['fad', 'circle']" class="mr-1 silver"/><font-awesome-icon v-b-tooltip.hover.bottom="'OLBT Gold'" :icon="['fad', 'circle']" v-if="single_event.gold" class="mr-1 gold"/></p>
+                        <p class="mb-0">
+                          Statut :
+                          <span v-b-tooltip.hover.bottom="{ customClass: 'blue' }" title="OLBT Blue" class="mr-1 blue"><font-awesome-icon :icon="['fad', 'circle']" v-if="single_event.blue"/></span>
+                          <span v-b-tooltip.hover.bottom="{ customClass: 'silver' }" title="OLBT Silver" class="mr-1 silver"><font-awesome-icon :icon="['fad', 'circle']" v-if="single_event.silver"/></span>
+                          <span v-b-tooltip.hover.bottom="{ customClass: 'gold' }" title="OLBT Gold" class="mr-1 gold"><font-awesome-icon :icon="['fad', 'circle']" v-if="single_event.gold"/></span>
+                        </p>
                       </b-col>
                       <b-col cols="6" class="text-right">
                         <p class="mb-0">{{ new Date() | moment("DD/MM/YY") }}</p>
@@ -85,6 +90,7 @@
         </b-row>
       </b-container>
     </b-container>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -92,6 +98,7 @@
 import NavBar from '@/components/NavBar'
 import Profile from '@/components/Profile'
 import Menu from '@/components/Menu'
+import Footer from '@/components/Footer'
 import ICountUp from 'vue-countup-v2'
 
 export default {
@@ -100,7 +107,8 @@ export default {
     NavBar,
     Profile,
     Menu,
-    ICountUp
+    ICountUp,
+    Footer
   },
   data() {
     return {

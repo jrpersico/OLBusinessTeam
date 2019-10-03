@@ -27,18 +27,31 @@ body {
 .slick-dotted.slick-slider {
     margin-bottom: 0;
 }
-.tooltip-arrow {
-  background: red;
+
+.blue .tooltip-inner {
+    color: #3069ca;
 }
-.tooltip {
-  .tooltip-inner {
-    background: red;
-  }
+.silver .tooltip-inner {
+  color: #a7a9ac;
+}
+.gold .tooltip-inner {
+  color: #f2b64e;
+}
+
+.bs-tooltip-bottom .arrow::before, .bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
+    border-bottom-color: #fff;
+}
+.bs-tooltip-top .arrow::before, .bs-tooltip-auto[x-placement^="top"] .arrow::before {
+    border-top-color: #fff;
+}
+.tooltip .tooltip-inner {
+    background: #fff;
 }
 
 .content-page {
   background-color: #f2f5f6;
   margin-top: -4.7rem;
+  padding-bottom: 3rem;
   z-index: -1;
   padding-top: 5rem;
   border-radius: 2rem 2rem 0rem 0rem;
@@ -70,9 +83,16 @@ body {
         width: 100%;
         height: 110px;
         padding: 0.5rem;
+        @media screen and (max-width: 480px) {
+          padding: 0rem 4rem;
+          margin-bottom: 1rem;
+        }
       }
       .btn {
         float: right;
+        @media screen and (max-width: 480px) {
+          margin-top: 1rem;
+        }
       }
     }
     .btn {
@@ -118,6 +138,7 @@ body {
   }
   .events-list {
     color: #19356c;
+    margin-bottom: 2rem;
     h5 {
       font-weight: bold;
       text-transform: uppercase;
@@ -130,6 +151,7 @@ body {
         svg {
           float: right;
           color: #f2b64e;
+          font-size: x-large;
         }
       }
     }

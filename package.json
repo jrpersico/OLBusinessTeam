@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/pro-duotone-svg-icons": "^5.11.2",
     "@fortawesome/pro-light-svg-icons": "^5.11.2",
@@ -22,6 +23,7 @@
     "jquery": "^3.4.1",
     "vue": "^2.6.10",
     "vue-apexcharts": "^1.5.0",
+    "vue-clamp": "^0.2.2",
     "vue-countup-v2": "^4.0.0",
     "vue-moment": "^4.0.0",
     "vue-router": "^3.0.3",
