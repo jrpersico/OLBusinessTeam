@@ -9,7 +9,7 @@
     </b-container>
     <b-container class="content-page" fluid>
       <b-container>
-        <b-row class="dashboard">
+        <b-row>
           <b-col cols="12" sm="12" md="12" lg="5" xl="6">
             <div class="card-content-page">
               <h5 class="mb-2">Nouveaux membres</h5>
@@ -17,13 +17,13 @@
               <div class="members" v-for="(member, index) in new_members" :key="index">
                 <b-row align-v="center">
                   <b-col cols="12" sm="3">
-                    <div class="img-members" :style="{ 'background': 'url(' + member.img + ') no-repeat center','background-size':'contain', 'background-origin': 'content-box' }"></div>
+                    <img class="img-members" :src="member.img" alt="">
                   </b-col>
                   <b-col cols="12" sm="9">
                     <h5 class="mb-3">{{member.referer_firstname}} {{member.referer_lastname}} <span class="business">({{member.name}})</span></h5>
                     <p class="mb-2"><font-awesome-icon :icon="['fad', 'mail-bulk']" class="mr-3"/> {{member.mail}}</p>
                     <p class="mb-0"><font-awesome-icon :icon="['fad', 'mobile']" class="mr-3"/> {{member.phone}}</p>
-                    <b-button class="px-4" pill>Contacter</b-button>
+                    <b-button class="px-4" :href="'mailto:' + member.mail" pill>Contacter</b-button>
                   </b-col>
                 </b-row>
                 <hr v-if="(index+1) != new_members.length">
@@ -104,7 +104,7 @@ import Footer from '@/components/Footer'
 import ICountUp from 'vue-countup-v2'
 
 export default {
-  name: 'home',
+  name: 'dashboard',
   components: {
     NavBar,
     Profile,

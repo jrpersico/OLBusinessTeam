@@ -3,7 +3,7 @@
     <b-col cols="12" class="menu-items">
       <slick ref="slick" class="menu" :options="slickOptions">
         <div class="menu-item text-center py-5">
-          <b-button class="px-5 py-3" to="/">Dashboard</b-button>
+          <b-button class="px-5 py-3" to="/dashboard">Dashboard</b-button>
         </div>
         <div class="menu-item text-center py-5">
           <b-button class="px-5 py-3" to="/annuaire">Annuaire</b-button>
