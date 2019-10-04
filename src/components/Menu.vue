@@ -1,6 +1,6 @@
 <template>
   <b-row class="mt-4" align-v="center">
-    <b-col cols="12" class="menu-container">
+    <b-col cols="12" class="menu-items">
       <slick ref="slick" class="menu" :options="slickOptions">
         <div class="menu-item text-center py-5">
           <b-button class="px-5 py-3" to="/">Dashboard</b-button>
@@ -10,6 +10,9 @@
         </div>
         <div class="menu-item text-center py-5">
           <b-button class="px-5 py-3" to="/calendrier">Calendrier</b-button>
+        </div>
+        <div class="menu-item text-center py-5">
+          <b-button class="px-5 py-3" to="/compte">Mes Billets</b-button>
         </div>
         <div class="menu-item text-center py-5">
           <b-button class="px-5 py-3" to="/compte">Mon Compte</b-button>
@@ -32,7 +35,7 @@ components: {
 data() {
   return {
     slickOptions: {
-      slidesToShow: 4,
+      slidesToShow: 5,
       infinite: false,
       autoplay: false,
       slidesToScroll: 1,
@@ -42,10 +45,27 @@ data() {
       centerPadding: 15,
       responsive: [
         {
-          breakpoint: 600,
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 3,
+            variableWidth: true,
+            centerMode: false
+          }
+        },
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 3,
+            variableWidth: true,
+            centerMode: false
+          }
+        },
+        {
+          breakpoint: 768,
           settings: {
             slidesToShow: 2,
-            slidesToScroll: 2
+            variableWidth: true,
+            centerMode: false
           }
         },
         {
@@ -66,8 +86,8 @@ methods: {
 </script>
 
 <style lang="scss" scoped>
-.menu-container {
-  @media screen and (max-width: 576px) {
+.menu-items {
+  @media screen and (max-width: 1200px) {
     padding: 0;
   }
   .menu {
@@ -87,6 +107,15 @@ methods: {
     .menu-item {
       @media screen and (max-width: 576px) {
         padding: 2rem 1rem !important;
+      }
+      @media (min-width: 576px) and (max-width: 768px) {
+        padding: 2rem 2rem !important;
+      }
+      @media (min-width: 768px) and (max-width: 992px) {
+        padding: 2rem 2rem !important;
+      }
+      @media (min-width: 992px) and (max-width: 1200px) {
+        padding: 2rem 2rem !important;
       }
     }
   }

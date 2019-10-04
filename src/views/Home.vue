@@ -1,17 +1,19 @@
 <template>
   <div class="home">
     <NavBar></NavBar>
-    <b-container>
+    <b-container class="profile-container">
       <Profile></Profile>
+    </b-container>
+    <b-container class="menu-container">
       <Menu></Menu>
     </b-container>
     <b-container class="content-page" fluid>
       <b-container>
         <b-row class="dashboard">
-          <b-col cols="12" sm="6">
+          <b-col cols="12" sm="12" md="12" lg="5" xl="6">
             <div class="card-content-page">
               <h5 class="mb-2">Nouveaux membres</h5>
-              <p class="mb-4">Découvrez les nouveaux membres de la communauté OLBT</p>
+              <p class="mb-4">Découvrez les nouveaux membres OLBT</p>
               <div class="members" v-for="(member, index) in new_members" :key="index">
                 <b-row align-v="center">
                   <b-col cols="12" sm="3">
@@ -28,7 +30,7 @@
               </div>
             </div>
           </b-col>
-          <b-col cols="12" sm="6">
+          <b-col cols="12" sm="12" md="12" lg="7" xl="6">
             <b-row>
               <b-col cols="12" sm="6">
                 <div class="card-content-page members-card">

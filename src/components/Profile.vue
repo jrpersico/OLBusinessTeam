@@ -1,6 +1,6 @@
 <template>
   <b-row class="profil" align-v="center">
-    <b-col cols="12" sm="12" md="6">
+    <b-col cols="12" sm="12" md="6" lg="6">
       <b-row align-v="center">
         <b-col cols="12" sm="4" class="profile-pic-container">
           <b-img class="profile-pic" src="https://media.licdn.com/dms/image/C4D03AQEk423IZXAf1w/profile-displayphoto-shrink_200_200/0?e=1575504000&v=beta&t=rdzfYl6aWTMTcbuJzl-uvy7uc7TeIcn8GsBqUSHAC-k" alt="Profile Pic"></b-img>
@@ -12,7 +12,7 @@
         </b-col>
       </b-row>
     </b-col>
-    <b-col cols="12" sm="12" md="6" class="ml-auto">
+    <b-col cols="12" sm="12" md="6" lg="6" class="ml-auto">
       <slick ref="slick" class="complete-status" :options="slickOptions">
         <div>
             <ul class="complete p-2">
@@ -115,6 +115,9 @@ export default {
       @media screen and (max-width: 576px) {
           margin-bottom: 1rem;
       }
+      @media (min-width: 576px) and (max-width: 768px) {
+        margin-bottom: 2rem;
+      }
     }
   }
   .hello-info {
@@ -139,9 +142,13 @@ export default {
 .complete-status {
   max-width: 450px;
   float: right;
-  @media screen and (max-width: 576px) {
+  @media screen and (max-width: 768px) {
       max-width: 100%;
       float: right;
+  }
+  @media (min-width: 768px) and (max-width: 992px) {
+    max-width: 450px;
+    float: right;
   }
   .complete {
     background-color: #f9f5f1;
@@ -188,6 +195,9 @@ export default {
     @media screen and (max-width: 576px) {
       padding-top: 1rem !important;
     }
+    @media (min-width: 576px) and (max-width: 768px) {
+      padding-top: 1rem !important;
+    }
     li {
       display: inline-block;
       width: 33%;
@@ -199,6 +209,9 @@ export default {
         font-weight: bold;
         font-size: large;
         @media screen and (max-width: 576px) {
+          font-size: smaller;
+        }
+        @media (min-width: 576px) and (max-width: 768px) {
           font-size: smaller;
         }
       }
@@ -215,6 +228,10 @@ export default {
         width: 4rem;
         margin-bottom: 1rem;
         @media screen and (max-width: 576px) {
+          font-size: smaller;
+          padding: 12%;
+        }
+        @media (min-width: 576px) and (max-width: 768px) {
           font-size: smaller;
           padding: 12%;
         }
