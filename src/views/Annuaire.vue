@@ -10,10 +10,13 @@
     <b-container class="content-page" fluid>
       <b-container>
         <b-row class="search-bar">
+          <b-col cols="12">
+            <h5 class="mb-4">Entreprises OLBT</h5>
+          </b-col>
           <b-col cols="12" sm="12" md="12" lg="8">
-            <b-input-group prepend="Entreprises OLBT">
+            <b-input-group>
               <b-input-group-prepend is-text><font-awesome-icon :icon="['fad', 'search']"/></b-input-group-prepend>
-              <b-form-input type="text" placeholder="Rechercher"></b-form-input>
+              <b-form-input type="text" placeholder="Rechercher" v-model="search"></b-form-input>
             </b-input-group>
           </b-col>
           <b-col cols="12" sm="6" md="6" lg="2">
@@ -23,7 +26,7 @@
             <b-form-select v-model="selected" :options="optiones"></b-form-select>
           </b-col>
         </b-row>
-        <b-row>
+        <b-row class="mt-5">
           <b-col cols="12" sm="12" md="12" lg="6" v-for="(member, index) in list" :key="index">
             <div class="card-content-page member-card">
                 <b-row align-v="center">
@@ -90,7 +93,7 @@ export default {
         { img:'http://www.programme-pepites.fr/wp-content/uploads/2016/09/Soladis-logo-2017_GROUP.jpg', name:'Soladis', referer_firstname:'Mark', referer_lastname: 'Zuckernberg', mail:'soladis@soladis.com', phone:'+ 33 0 00 00 00 00' },
         { img:'http://www.programme-pepites.fr/wp-content/uploads/2018/01/logo-sunaero-HD-COMPRESSE.jpg', name:'Sunaero', referer_firstname:'Brian', referer_lastname: 'Leduc', mail:'sunaero@sunaero.com', phone:'+ 33 0 00 00 00 00' },
 
-        { img:'http://www.programme-pepites.fr/wp-content/uploads/2017/10/logo-techteam.jpg', name:'Techteam', referer_firstname:'Thomas', referer_lastname: 'Walbert', mail:'techteam@techteam.com', phone:'+ 33 0 00 00 00 00' },
+        { img:'http://www.programme-pepites.fr/wp-content/uploads/2017/10/logo-techteam.jpg', name:'Tech F1team', referer_firstname:'Thomas', referer_lastname: 'Walbert', mail:'techteam@techteam.com', phone:'+ 33 0 00 00 00 00' },
         { img:'http://www.programme-pepites.fr/wp-content/uploads/2016/09/tertradis.jpg', name:'Tertradis', referer_firstname:'Florient', referer_lastname: 'Boulet', mail:'tertradis@tertradis.com', phone:'+ 33 0 00 00 00 00' },
         { img:'http://www.programme-pepites.fr/wp-content/uploads/2019/09/Vélogik-logo-2019-modifié.png', name:'Velogik', referer_firstname:'Dorah', referer_lastname: 'Talbi', mail:'velogik@velogik.com', phone:'+ 33 0 00 00 00 00' }
       ],
@@ -112,6 +115,7 @@ export default {
       ],
       currentPage: 1,
       perPage: 8,
+      search: null
     }
   },
   methods: {
@@ -119,9 +123,31 @@ export default {
   },
   computed: {
     list () {
-      const items = this.members
+      var self = this;
+      var search = self.search
+
+      var items = []
+
+      if (search){
+        items = this.members
+
+        var items_display = items.filter(member => {
+          return member.name.toLowerCase().includes(search.toLowerCase())
+        })
+
+        if(items.length > 0){
+          return items_display.sort();
+        } else {
+          return false;
+        }
+
+      } else {
+        items_display = this.members
+      }
+
+
       // Return just page of items needed
-      return items.slice(
+      return items_display.slice(
         (this.currentPage - 1) * this.perPage,
         this.currentPage * this.perPage
       )

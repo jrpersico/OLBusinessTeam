@@ -232,7 +232,12 @@ body {
     }
   }
   .search-bar {
-    margin-bottom: 1.5rem;
+    h5 {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: x-large;
+      color: #19356c;
+    }
     .input-group-text {
         color: #19356c;
         background-color: transparent;
@@ -246,6 +251,7 @@ body {
       border: 1px solid transparent;
       color: #19356c;
       height: calc(2.5em + 0.75rem + 2px);
+      text-transform: uppercase;
     }
     .form-control:focus {
       box-shadow: none;
