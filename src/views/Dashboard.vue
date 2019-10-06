@@ -16,13 +16,15 @@
               <p class="mb-4">Découvrez les nouveaux membres OLBT</p>
               <div class="members" v-for="(member, index) in new_members" :key="index">
                 <b-row align-v="center">
-                  <b-col cols="12" sm="3">
+                  <b-col cols="12" sm="3" class="text-center">
                     <img class="img-members" :src="member.img" alt="">
                   </b-col>
                   <b-col cols="12" sm="9">
                     <h5 class="mb-3">{{member.referer_firstname}} {{member.referer_lastname}} <span class="business">({{member.name}})</span></h5>
                     <p class="mb-2"><font-awesome-icon :icon="['fad', 'mail-bulk']" class="mr-3"/> {{member.mail}}</p>
                     <p class="mb-0"><font-awesome-icon :icon="['fad', 'mobile']" class="mr-3"/> {{member.phone}}</p>
+                  </b-col>
+                  <b-col cols="12">
                     <b-button class="px-4" :href="'mailto:' + member.mail" pill>Contacter</b-button>
                   </b-col>
                 </b-row>
