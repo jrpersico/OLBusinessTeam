@@ -20,9 +20,11 @@
                     <img class="img-members" :src="member.img" alt="">
                   </b-col>
                   <b-col cols="12" sm="9">
-                    <h5 class="mb-3">{{member.referer_firstname}} {{member.referer_lastname}} <span class="business">({{member.name}})</span></h5>
-                    <p class="mb-2"><font-awesome-icon :icon="['fad', 'mail-bulk']" class="mr-3"/> {{member.mail}}</p>
-                    <p class="mb-0"><font-awesome-icon :icon="['fad', 'mobile']" class="mr-3"/> {{member.phone}}</p>
+                    <h5 class="mb-1">{{member.referer_firstname}} {{member.referer_lastname}}</h5>
+                    <h5 class="mb-3 business"><v-clamp autoresize :max-lines="1" ellipsis="...">{{member.profession}} chez {{member.name}} ({{member.sector}})</v-clamp></h5>
+                    <p class="mb-1"><font-awesome-icon :icon="['fad', 'mail-bulk']" class="mr-3"/> {{member.mail}}</p>
+                    <p class="mb-1"><font-awesome-icon :icon="['fad', 'mobile']" class="mr-3"/> {{member.phone}}</p>
+                    <p class="mb-0 blue"><font-awesome-icon :icon="['fad', 'loveseat']" class="mr-3"/> <b>{{member.espace}}</b></p>
                   </b-col>
                   <b-col cols="12">
                     <b-button class="px-4" :href="'mailto:' + member.mail" pill>Contacter</b-button>
@@ -89,6 +91,12 @@
                   </div>
                 </div>
               </b-col>
+              <b-col cols="12">
+                <div class="card-content-page animation-card">
+                  <h5 class="mb-2">Animation dans votre salon</h5>
+                  <p class="mb-1">Benzenzou, le cracheur de feu !</p>
+                </div>
+              </b-col>
             </b-row>
           </b-col>
         </b-row>
@@ -104,6 +112,7 @@ import Profile from '@/components/Profile'
 import Menu from '@/components/Menu'
 import Footer from '@/components/Footer'
 import ICountUp from 'vue-countup-v2'
+import VClamp from 'vue-clamp'
 
 export default {
   name: 'dashboard',
@@ -112,14 +121,15 @@ export default {
     Profile,
     Menu,
     ICountUp,
-    Footer
+    Footer,
+    VClamp
   },
   data() {
     return {
       new_members : [
-        { img:'https://www.cerise-et-potiron.fr/images/logo/LogoCerisePotiron.png', name:'Cerise & Potiron', referer_firstname:'Hugo', referer_lastname: 'Arias', mail:'ceriseetpotirons@cerises.com', phone:'+ 33 0 00 00 00 00' },
-        { img:'https://www.bledina.com/app/themes/bledina/assets/images/v6/logo-bledina-dsk.svg', name:'Blédina', referer_firstname:'Florent', referer_lastname: 'Chapelier', mail:'bledina@bledina.com', phone:'+ 33 0 00 00 00 00' },
-        { img:'https://www.groupeseb.com/themes/custom/periscope/logo.svg', name:'SEB', referer_firstname:'Loïc', referer_lastname: 'Rollat', mail:'seb@seb.com', phone:'+ 33 0 00 00 00 00' }
+        { img:'https://www.cerise-et-potiron.fr/images/logo/LogoCerisePotiron.png', name:'Cerise & Potiron', referer_firstname:'Hugo', referer_lastname: 'Arias', mail:'ceriseetpotirons@cerises.com', phone:'+ 33 0 00 00 00 00', sector:'Commerce', espace:'Cercle OL', profession:'PDG' },
+        { img:'https://www.bledina.com/app/themes/bledina/assets/images/v6/logo-bledina-dsk.svg', name:'Blédina', referer_firstname:'Florent', referer_lastname: 'Chapelier', mail:'bledina@bledina.com', phone:'+ 33 0 00 00 00 00', sector:'Santé humaine et action sociale', espace:'President Box', profession:'Stagiaire' },
+        { img:'https://www.groupeseb.com/themes/custom/periscope/logo.svg', name:'SEB', referer_firstname:'Loïc', referer_lastname: 'Rollat', mail:'seb@seb.com', phone:'+ 33 0 00 00 00 00', sector:'Industries extractives', espace:'Cercle OL', profession:'PDG' },
       ],
       advantages : [
         { name:'Invitations', value:50, complete:'20/40' },

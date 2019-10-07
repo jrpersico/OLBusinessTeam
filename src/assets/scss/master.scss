@@ -111,14 +111,20 @@ body {
       font-weight: bold;
       text-transform: uppercase;
       font-size: larger;
-      .business {
-        font-weight: 400;
-      }
+    }
+    h5.business {
+      font-weight: 400;
+      text-transform: none;
     }
     p {
       font-size: medium;
       svg {
         color: #f2b64e;
+      }
+    }
+    p.blue {
+      svg {
+        color: #19356c;
       }
     }
     .members {
@@ -173,6 +179,13 @@ body {
       font-size: -webkit-xxx-large;
     }
   }
+  .animation-card {
+    background-color: #fae2bd;
+    background-image: url('../newspaper.svg');
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position: bottom right;
+  }
   .card-advantages {
     .advantages {
       .advantage {
@@ -191,10 +204,6 @@ body {
     hr {
       margin-top: 0.86rem;
       margin-bottom: 0.86rem;
-      @media (min-width: 992px) and (max-width: 1200px) {
-        margin-top: 1.63rem;
-        margin-bottom: 1.63rem;
-      }
     }
   }
   .events-list {
