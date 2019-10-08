@@ -42,11 +42,11 @@ methods: {
 <style lang="scss" scoped>
 .footer {
   background-color: #19356c;
-  background-image: url('../assets/art-museum.svg'), url('../assets/surveillance.svg');
-  background-repeat: no-repeat, no-repeat;
-  background-size: 14%, 16%;
+  background-image: url('../assets/surveillance.svg');
+  background-repeat: no-repeat;
+  background-size: 16%;
   color: #fff;
-  background-position: 4% 94%, 97% 79%;
+  background-position: 97% 79%;
   @media screen and (max-width: 576px) {
     background-image: url('../assets/surveillance.svg');
     background-repeat: no-repeat, no-repeat;

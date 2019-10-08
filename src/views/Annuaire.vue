@@ -26,7 +26,7 @@
             <b-form-select v-model="selected_sector" :options="options_sectors"></b-form-select>
           </b-col>
         </b-row>
-        <b-row class="mt-5">
+        <b-row class="mt-5" v-if="list.length > 0">
           <b-col cols="12" sm="12" md="12" lg="6" v-for="(member, index) in list" :key="index">
             <div class="card-content-page member-card">
                 <b-row align-v="center">
@@ -42,6 +42,22 @@
                   </b-col>
                   <b-col cols="12">
                     <b-button class="px-4" :href="'mailto:' + member.mail" pill>Contacter</b-button>
+                  </b-col>
+                </b-row>
+            </div>
+          </b-col>
+        </b-row>
+        <b-row class="mt-5" v-else>
+          <b-col cols="12" >
+            <div class="card-content-page no-result">
+                <b-row align-v="center">
+                  <b-col cols="8">
+                    <h5 class="mb-3">Ooops ...</h5>
+                    <p class="mb-1">
+                      Nous n'avons pas trouvé de résulat pour votre recherche <b>{{search}}</b>
+                      <span v-if="selected_espace && selected_sector"> dans l'espace VIP <b>{{selected_espace}}</b> et dans le secteur <b>{{selected_sector}}</b></span>
+                      <span v-else-if="selected_espace && !selected_sector"> dans l'espace VIP <b>{{selected_espace}}</b></span>
+                      <span v-else-if="!selected_espace && selected_sector"> dans le secteur <b>{{selected_sector}}</b></span>.</p>
                   </b-col>
                 </b-row>
             </div>

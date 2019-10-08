@@ -180,11 +180,12 @@ body {
     }
   }
   .animation-card {
-    background-color: #fae2bd;
+    background-color: #244e96;
     background-image: url('../newspaper.svg');
     background-repeat: no-repeat;
     background-size: 20%;
     background-position: bottom right;
+    color: #fff;
   }
   .card-advantages {
     .advantages {
@@ -316,4 +317,35 @@ body {
       }
     }
   }
+  .no-result {
+    h5 {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: medium;
+    }
+    p {
+      font-size: medium;
+    }
+    background-color: #fae2bd;
+    background-image: url('../result.svg');
+    background-repeat: no-repeat;
+    background-size: 15%;
+    background-position: bottom right;
+    @media screen and (max-width: 576px) {
+      background-size: 40%;
+    }
+    @media (min-width: 576px) and (max-width: 768px) {
+      background-size: 40%;
+    }
+    @media (min-width: 768px) and (max-width: 992px) {
+      background-size: 26%;
+    }
+    @media (min-width: 992px) and (max-width: 1200px) {
+      background-size: 18%;
+    }
+  }
 }
+
+.vuecal__now-line {color: #06c;}
+.vuecal__event.leisure {background-color: rgba(253, 156, 66, 0.9);border: 1px solid rgb(233, 136, 46);color: #fff;}
+.vuecal__event.sport {background-color: rgba(255, 102, 102, 0.9);border: 1px solid rgb(235, 82, 82);color: #fff;}

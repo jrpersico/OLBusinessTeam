@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="dashboard">
     <NavBar></NavBar>
     <b-container class="profile-container">
       <Profile></Profile>
@@ -43,7 +43,7 @@
                   <p class="mb-0">400 - Blue</p>
                   <p class="mb-0">720 - Silver</p>
                   <p class="mb-4">350 - Gold</p>
-                  <b-button class="px-4" pill>Annuaire</b-button>
+                  <b-button class="px-4" to="/annuaire" pill>Annuaire</b-button>
                 </div>
                 <div class="card-content-page card-advantages">
                   <h5 class="mb-2">Avantages</h5>
