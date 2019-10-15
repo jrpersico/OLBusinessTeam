@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap');
 
-$break-small: 320px;
-$break-large: 1200px;
-
 body {
   font-family: 'Roboto Condensed', sans-serif;
+}
+
+button:focus {
+    outline: 1px dotted;
+    outline: none;
 }
 
 .slick-dots {
@@ -347,5 +349,30 @@ body {
 }
 
 .vuecal__now-line {color: #06c;}
-.vuecal__event.leisure {background-color: rgba(253, 156, 66, 0.9);border: 1px solid rgb(233, 136, 46);color: #fff;}
-.vuecal__event.sport {background-color: rgba(255, 102, 102, 0.9);border: 1px solid rgb(235, 82, 82);color: #fff;}
+.vuecal__event.leisure {background-color: rgba(36, 78, 150, 0.8);border: 1px solid rgb(36, 78, 150);color: #fff;}
+.vuecal__event.sport {background-color: rgba(242, 182, 78, 0.8);border: 1px solid rgb(242, 182, 78);color: #fff;}
+.vuecal__cell-events-count {background-color: #244e96;}
+.vuecal__menu {
+  background-color: #244e96;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+  button {
+    text-transform: uppercase;
+    font-size: large;
+    font-weight: 300;
+  }
+}
+.vuecal__menu button {border-bottom-color: #f2b64e;color: #fff;}
+.vuecal__menu button.active {background-color: rgba(255, 255, 255, 0.15);}
+.vuecal__title-bar {
+  background-color: #f9f5f1;
+  button {
+    color: #f2b64e;
+    font-size: large;
+  }
+}
+.vuecal__cell.today, .vuecal__cell.current {background-color: rgba(240, 240, 255, 0.4);}
+.vuecal:not(.vuecal--day-view) .vuecal__cell.selected {background-color: rgba(36, 78, 150, 0.2);}
+.vuecal__cell.selected:before {border-color: rgba(36, 78, 150, 0.2);}
+.vuecal__no-event {
+  color: #244e96;
+}
