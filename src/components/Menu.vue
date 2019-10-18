@@ -12,7 +12,7 @@
           <b-button class="px-5 py-3" to="/calendrier">Calendrier</b-button>
         </div>
         <div class="menu-item text-center py-5">
-          <b-button class="px-5 py-3" to="/compte">Mes Billets</b-button>
+          <b-button class="px-5 py-3" to="/billets">Mes Billets</b-button>
         </div>
         <div class="menu-item text-center py-5">
           <b-button class="px-5 py-3" to="/compte">Mon Compte</b-button>

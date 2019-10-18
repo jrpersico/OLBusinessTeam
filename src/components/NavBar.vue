@@ -13,8 +13,8 @@
       <b-navbar-nav class="ml-auto">
 
         <b-navbar-nav>
-          <b-nav-item href="#" class="ml-3"><font-awesome-icon :icon="['fad', 'bell']"/></b-nav-item>
-          <b-nav-item href="#" class="ml-3"><font-awesome-icon :icon="['fad', 'calendar-alt']"/></b-nav-item>
+          <b-nav-item class="ml-3"><font-awesome-icon :icon="['fad', 'bell']"/></b-nav-item>
+          <b-nav-item to="/calendrier" class="ml-3"><font-awesome-icon :icon="['fad', 'calendar-alt']"/></b-nav-item>
         </b-navbar-nav>
 
         <b-nav-item-dropdown right no-caret>

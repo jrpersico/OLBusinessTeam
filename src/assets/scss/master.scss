@@ -188,6 +188,9 @@ button:focus {
     background-size: 20%;
     background-position: bottom right;
     color: #fff;
+    @media (min-width: 992px) and (max-width: 1200px) {
+      height: 8.9rem;
+    }
   }
   .card-advantages {
     .advantages {
@@ -319,6 +322,51 @@ button:focus {
       }
     }
   }
+  .ticket-card.ligue {
+    background-image: url('../Logo-L1.png');
+    background-repeat: no-repeat;
+    background-size: 35%;
+    background-position: -12% 35%;
+  }
+  .ticket-card.champions {
+    background-image: url('../Logo-CL.png');
+    background-repeat: no-repeat;
+    background-size: 42%;
+    background-position: -23% 30%;
+  }
+  .ticket-card {
+    background-color: #244e96;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 2rem;
+    .logos {
+      ul {
+        margin: 0;
+        padding: 0;
+        li {
+          display: inline-block;
+          img {
+            height: 45px;
+          }
+        }
+      }
+    }
+    h5 {
+      text-transform: uppercase;
+      font-weight: bold;
+      img {
+        height: 35px;
+      }
+      span {
+        font-weight: bold;
+        float: right;
+      }
+    }
+    p, h4 {
+      font-size: medium;
+      text-transform: uppercase;
+    }
+  }
   .no-result {
     h5 {
       font-weight: bold;
@@ -348,6 +396,26 @@ button:focus {
   }
 }
 
+.vuecal {box-shadow: none;}
+.vuecal__weekdays-headings {
+  border-left: solid 2px #f9f5f1;
+  border-right: solid 2px #f9f5f1;
+}
+.vuecal__cell:before {
+  border: 1px solid #f9f5f1;
+}
+.vuecal__body {
+  border-left: solid 2px #f9f5f1;
+  border-right: solid 2px #f9f5f1;
+  border-bottom: solid 2px #f9f5f1;
+}
+.vuecal__time-column .vuecal__time-cell {
+    color: #244e96;
+    text-align: center;
+    padding-right: 0;
+    font-size: .9em;
+    padding-top: 0px;
+}
 .vuecal__now-line {color: #06c;}
 .vuecal__event.leisure {background-color: rgba(36, 78, 150, 0.8);border: 1px solid rgb(36, 78, 150);color: #fff;}
 .vuecal__event.sport {background-color: rgba(242, 182, 78, 0.8);border: 1px solid rgb(242, 182, 78);color: #fff;}

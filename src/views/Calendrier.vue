@@ -12,7 +12,7 @@
       <b-row>
         <b-col cols="12">
           <div class="card-content-page calendar">
-            <vue-cal style="height: 600px" default-view="month" events-on-month-view="short" :disable-views="['years', 'year', 'day']" :events="events" :time-from="8 * 60" :time-to="23 * 60" :time-step="60" locale="fr"></vue-cal>
+            <vue-cal style="height: 600px" default-view="month" events-on-month-view="short" :disable-views="['years', 'year']" :events="events" :time-from="8 * 60" :time-to="23 * 60" :time-step="60" locale="fr"></vue-cal>
           </div>
         </b-col>
       </b-row>

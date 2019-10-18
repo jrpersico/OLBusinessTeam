@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import Dashboard from './views/Dashboard.vue'
 import Annuaire from './views/Annuaire.vue'
 import Calendrier from './views/Calendrier.vue'
+import Billets from './views/Billets.vue'
+import Compte from './views/Compte.vue'
 
 Vue.use(Router)
 
@@ -38,6 +40,22 @@ const router = new Router({
       component: Calendrier,
       meta: {
         title:'Calendrier - OLBT'
+      }
+    },
+    {
+      path: '/billets',
+      name: 'billets',
+      component: Billets,
+      meta: {
+        title:'Billets - OLBT'
+      }
+    },
+    {
+      path: '/compte',
+      name: 'compte',
+      component: Compte,
+      meta: {
+        title:'Compte - OLBT'
       }
     }
   ]
