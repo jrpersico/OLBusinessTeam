@@ -99,12 +99,12 @@
                 <b-row>
                   <b-col cols="12">
                     <b-form-checkbox class="mb-3" id="checkbox-offre" v-model="form.offre" name="checkbox-offre">
-                      Les offres commerciales de l'Olympique Lyonnais
+                      Les offres commerciales de l'OL
                     </b-form-checkbox>
                   </b-col>
                   <b-col cols="12">
                     <b-form-checkbox class="mb-3" id="checkbox-partners" v-model="form.partners" name="checkbox-partners">
-                      Les offres partenaires de l'Olympique Lyonnais
+                      Les offres partenaires de l'OL
                     </b-form-checkbox>
                   </b-col>
                   <b-col cols="12">
