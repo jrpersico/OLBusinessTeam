@@ -21,7 +21,7 @@
           <template v-slot:button-content>
             <font-awesome-icon :icon="['fad', 'user-circle']" class="ml-3 mr-3"/>
           </template>
-          <b-dropdown-item href="#">Profil</b-dropdown-item>
+          <b-dropdown-item to="/compte">Profil</b-dropdown-item>
           <b-dropdown-item href="#">Déconnexion</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>

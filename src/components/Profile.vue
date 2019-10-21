@@ -34,7 +34,7 @@
               <li class="progression-info">
                 <h5 class="mb-2">Profil à compléter</h5>
                 <p class="mb-2">Bénéficiez de tous vos avantages<br>en complétant votre profil</p>
-                <b-button class="px-4" pill>Compléter</b-button>
+                <b-button class="px-4" to="/compte" pill>Compléter</b-button>
               </li>
             </ul>
         </div>
