@@ -5,8 +5,7 @@ body {
 }
 
 button:focus {
-    outline: 1px dotted;
-    outline: none;
+    outline: none !important;
 }
 
 .slick-dots {
@@ -365,6 +364,12 @@ button:focus {
     p, h4 {
       font-size: medium;
       text-transform: uppercase;
+    }
+  }
+  .optin-card {
+    .btn {
+      float: right;
+      margin-top: 1rem;
     }
   }
   .no-result {
