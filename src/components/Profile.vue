@@ -3,7 +3,7 @@
     <b-col cols="12" sm="12" md="6" lg="6">
       <b-row align-v="center">
         <b-col cols="12" sm="4" class="profile-pic-container">
-          <b-img class="profile-pic" src="https://media.licdn.com/dms/image/C4D03AQEk423IZXAf1w/profile-displayphoto-shrink_200_200/0?e=1575504000&v=beta&t=rdzfYl6aWTMTcbuJzl-uvy7uc7TeIcn8GsBqUSHAC-k" alt="Profile Pic"></b-img>
+          <img class="profile-pic" src="../assets/hugo.jpeg" alt="Profile Pic"></img>
         </b-col>
         <b-col cols="12" sm="8" class="hello-info">
           <h3 class="mb-4">Bonjour Hugo 👋</h3>
